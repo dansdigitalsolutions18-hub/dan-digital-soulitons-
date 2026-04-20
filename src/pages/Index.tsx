@@ -312,6 +312,22 @@ const Contact = () => {
           </div>
         </div>
 
+          <div className="mt-8 rounded-2xl border-2 border-accent bg-background p-6 shadow-card">
+            <div className="flex items-start gap-3">
+              <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-accent text-accent-foreground">
+                <Phone className="h-5 w-5" />
+              </div>
+              <p className="text-base font-semibold leading-relaxed text-primary">
+                If you email me, we can set up a{" "}
+                <span className="bg-gradient-hero bg-clip-text text-transparent">
+                  free over-the-phone consultation
+                </span>{" "}
+                to talk about your business needs.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <Card className="border-border p-6 shadow-card sm:p-8">
           <form onSubmit={onSubmit} className="space-y-4">
             <div className="grid gap-4 sm:grid-cols-2">
@@ -321,7 +337,7 @@ const Contact = () => {
             <Input name="business" placeholder="Business name" />
             <Textarea name="message" placeholder="Tell me about your project…" rows={5} required />
             <Button type="submit" size="lg" className="w-full" disabled={loading}>
-              {loading ? "Sending…" : "Request a Quote"}
+              {loading ? "Sending…" : "Send Message"}
             </Button>
           </form>
         </Card>
