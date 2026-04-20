@@ -310,7 +310,6 @@ const Contact = () => {
               <span className="font-medium">dansdigitalsolutions18@gmail.com</span>
             </a>
           </div>
-        </div>
 
           <div className="mt-8 rounded-2xl border-2 border-accent bg-background p-6 shadow-card">
             <div className="flex items-start gap-3">
