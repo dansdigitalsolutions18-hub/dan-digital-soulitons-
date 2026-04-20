@@ -47,7 +47,7 @@ const groups: Group[] = [
       {
         name: "GBP Optimization",
         price: "$100–$150",
-        features: ["Full profile rewrite for visibility", "Services, products & Q&A added", "Review & post strategy tips"],
+        features: ["Full profile rewrite for visibility", "Services, products & Q&A added", "Photos & posts refreshed"],
       },
     ],
   },
