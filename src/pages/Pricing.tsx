@@ -47,7 +47,7 @@ const groups: Group[] = [
       {
         name: "GBP Optimization",
         price: "$100–$150",
-        features: ["Full profile rewrite for visibility", "Services, products & Q&A added", "Review & post strategy tips"],
+        features: ["Full profile rewrite for visibility", "Services, products & Q&A added", "Photos & posts refreshed"],
       },
     ],
   },
@@ -64,7 +64,7 @@ const groups: Group[] = [
       {
         name: "Full Setup",
         price: "$150",
-        features: ["Facebook + Instagram", "Branded profiles & cover images", "Starter posts & posting tips"],
+        features: ["Facebook + Instagram", "Branded profiles & cover images", "Starter posts to launch with"],
       },
     ],
   },

@@ -27,7 +27,7 @@ const Home = () => (
           </h1>
           <p className="max-w-xl text-lg text-muted-foreground">
             Affordable, stress-free digital marketing for small local businesses — websites, Google
-            Business Profiles, social media, and simple strategy that actually works.
+            Business Profiles, and social media setup that actually works.
           </p>
           <div className="flex flex-wrap gap-4 pt-2">
             <Button asChild size="lg" className="shadow-glow">
