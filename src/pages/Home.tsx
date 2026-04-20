@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, MessageSquare, Lightbulb, Rocket, Star } from "lucide-react";
+import { ArrowRight, MessageSquare, Lightbulb, Rocket } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import SectionHeader from "@/components/SectionHeader";
 
@@ -11,11 +11,6 @@ const steps = [
   { icon: Rocket, title: "3. Launch & Grow", desc: "I build it out, get you live, and help you keep things running smoothly." },
 ];
 
-const testimonials = [
-  { name: "Local Business Owner", role: "Coming soon", quote: "Testimonials from happy Southwest Virginia clients will appear here." },
-  { name: "Local Business Owner", role: "Coming soon", quote: "Real reviews from small businesses we've helped get online." },
-  { name: "Local Business Owner", role: "Coming soon", quote: "Check back as we collect feedback from our growing community." },
-];
 
 const Home = () => (
   <>
