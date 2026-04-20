@@ -263,14 +263,33 @@ const About = () => (
 const Contact = () => {
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      name: String(data.get("name") || ""),
+      email: String(data.get("email") || ""),
+      business: String(data.get("business") || ""),
+      message: String(data.get("message") || ""),
+    };
+
     setLoading(true);
-    setTimeout(() => {
+    try {
+      const { supabase } = await import("@/integrations/supabase/client");
+      const { error } = await supabase.functions.invoke("send-contact-message", { body: payload });
+      if (error) throw error;
+      toast({ title: "Message sent!", description: "Thanks — I’ll be in touch within 24 hours." });
+      form.reset();
+    } catch (err) {
+      toast({
+        title: "Couldn’t send message",
+        description: "Please email dansdigitalsolutions18@gmail.com directly.",
+        variant: "destructive",
+      });
+    } finally {
       setLoading(false);
-      toast({ title: "Quote requested!", description: "Thanks — I’ll be in touch within 24 hours." });
-      (e.target as HTMLFormElement).reset();
-    }, 600);
+    }
   };
 
   return (
@@ -291,6 +310,21 @@ const Contact = () => {
               <span className="font-medium">dansdigitalsolutions18@gmail.com</span>
             </a>
           </div>
+
+          <div className="mt-8 rounded-2xl border-2 border-accent bg-background p-6 shadow-card">
+            <div className="flex items-start gap-3">
+              <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-accent text-accent-foreground">
+                <Phone className="h-5 w-5" />
+              </div>
+              <p className="text-base font-semibold leading-relaxed text-primary">
+                If you email me, we can set up a{" "}
+                <span className="bg-gradient-hero bg-clip-text text-transparent">
+                  free over-the-phone consultation
+                </span>{" "}
+                to talk about your business needs.
+              </p>
+            </div>
+          </div>
         </div>
 
         <Card className="border-border p-6 shadow-card sm:p-8">
@@ -302,7 +336,7 @@ const Contact = () => {
             <Input name="business" placeholder="Business name" />
             <Textarea name="message" placeholder="Tell me about your project…" rows={5} required />
             <Button type="submit" size="lg" className="w-full" disabled={loading}>
-              {loading ? "Sending…" : "Request a Quote"}
+              {loading ? "Sending…" : "Send Message"}
             </Button>
           </form>
         </Card>
