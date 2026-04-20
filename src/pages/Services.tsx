@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Share2, MapPin, Globe, Target, Check } from "lucide-react";
+import { Share2, MapPin, Globe, Check } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 
 const services = [
@@ -33,16 +33,6 @@ const services = [
       "1–3 page custom design that loads fast on phones",
       "Contact forms, maps, and click-to-call built in",
       "Easy to update as your business grows",
-    ],
-  },
-  {
-    icon: Target,
-    title: "Digital Marketing Strategy",
-    desc: "A simple, honest plan for getting more customers online — no jargon, no overwhelm.",
-    benefits: [
-      "Clear next steps based on your business goals",
-      "Recommendations you can actually act on",
-      "Ongoing guidance as your needs change",
     ],
   },
 ];
