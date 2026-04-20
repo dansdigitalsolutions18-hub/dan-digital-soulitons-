@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, MessageSquare, Lightbulb, Rocket, Star } from "lucide-react";
+import { ArrowRight, MessageSquare, Lightbulb, Rocket } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import SectionHeader from "@/components/SectionHeader";
 
@@ -11,11 +11,6 @@ const steps = [
   { icon: Rocket, title: "3. Launch & Grow", desc: "I build it out, get you live, and help you keep things running smoothly." },
 ];
 
-const testimonials = [
-  { name: "Local Business Owner", role: "Coming soon", quote: "Testimonials from happy Southwest Virginia clients will appear here." },
-  { name: "Local Business Owner", role: "Coming soon", quote: "Real reviews from small businesses we've helped get online." },
-  { name: "Local Business Owner", role: "Coming soon", quote: "Check back as we collect feedback from our growing community." },
-];
 
 const Home = () => (
   <>
@@ -84,29 +79,6 @@ const Home = () => (
         </div>
       </div>
     </section>
-
-    <section className="py-16 md:py-24">
-      <div className="container">
-        <SectionHeader eyebrow="Testimonials" title="What Clients Are Saying" sub="Real feedback from local businesses — coming soon." />
-        <div className="grid gap-6 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Card key={i} className="border-border p-6 shadow-soft">
-              <div className="mb-3 flex gap-1 text-accent">
-                {Array.from({ length: 5 }).map((_, j) => (
-                  <Star key={j} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <p className="mb-4 text-sm italic leading-relaxed text-muted-foreground">"{t.quote}"</p>
-              <div>
-                <p className="text-sm font-semibold text-primary">{t.name}</p>
-                <p className="text-xs text-muted-foreground">{t.role}</p>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-
     <section className="bg-gradient-hero py-16 text-primary-foreground md:py-20">
       <div className="container flex flex-col items-center gap-6 text-center">
         <h2 className="max-w-2xl text-3xl font-bold sm:text-4xl">Ready to grow your local business online?</h2>
