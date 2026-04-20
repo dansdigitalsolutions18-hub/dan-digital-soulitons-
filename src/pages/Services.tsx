@@ -12,7 +12,7 @@ const services = [
     benefits: [
       "Branded profile design across Facebook & Instagram",
       "Bio, links, and contact info optimized for local search",
-      "Starter posting tips so you can keep momentum going",
+      "Starter posts ready to publish on day one",
     ],
   },
   {

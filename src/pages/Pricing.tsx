@@ -64,7 +64,7 @@ const groups: Group[] = [
       {
         name: "Full Setup",
         price: "$150",
-        features: ["Facebook + Instagram", "Branded profiles & cover images", "Starter posts & posting tips"],
+        features: ["Facebook + Instagram", "Branded profiles & cover images", "Starter posts to launch with"],
       },
     ],
   },
