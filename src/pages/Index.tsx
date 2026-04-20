@@ -263,14 +263,33 @@ const About = () => (
 const Contact = () => {
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      name: String(data.get("name") || ""),
+      email: String(data.get("email") || ""),
+      business: String(data.get("business") || ""),
+      message: String(data.get("message") || ""),
+    };
+
     setLoading(true);
-    setTimeout(() => {
+    try {
+      const { supabase } = await import("@/integrations/supabase/client");
+      const { error } = await supabase.functions.invoke("send-contact-message", { body: payload });
+      if (error) throw error;
+      toast({ title: "Message sent!", description: "Thanks — I’ll be in touch within 24 hours." });
+      form.reset();
+    } catch (err) {
+      toast({
+        title: "Couldn’t send message",
+        description: "Please email dansdigitalsolutions18@gmail.com directly.",
+        variant: "destructive",
+      });
+    } finally {
       setLoading(false);
-      toast({ title: "Quote requested!", description: "Thanks — I’ll be in touch within 24 hours." });
-      (e.target as HTMLFormElement).reset();
-    }, 600);
+    }
   };
 
   return (
